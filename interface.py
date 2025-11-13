@@ -1,6 +1,8 @@
 import streamlit as st
+import os
 from imagem import converter_imagem_para_pdf
 from txt import converter_txt_para_pdf
+from office import salvar_arquivo
 
 # Configuração da interface do Streamlit
 st.set_page_config(
@@ -50,5 +52,15 @@ if arquivo is not None:
         )
         
         print("Conversão concluída com sucesso!")
+
+# -------------------------- DOCX ---------------------------
+    elif tipo == "DOCX":
+        upload_diretory = "uploads"
+        os.makedirs(upload_diretory, exist_ok=True) #cria a pasta "uploads", caso não exista
         
+        file_name = os.path.basename(arquivo.name) # Pega o nome do arquivo enviado
+        save_path = os.path.join(upload_diretory, file_name) # Cria o caminho completo para salvar o arquivo
+        salvar_arquivo(arquivo, save_path)
+
+
 
