@@ -2,7 +2,8 @@ import streamlit as st
 import os
 from imagem import converter_imagem_para_pdf
 from txt import converter_txt_para_pdf
-from office import salvar_arquivo
+from upload import salvar_arquivo
+from docx import converter_docx_para_pdf
 
 # Configuração da interface do Streamlit
 st.set_page_config(
@@ -17,7 +18,7 @@ st.write("Objetivo converter arquivo em PDF de forma segura.") # Texto simples
 
 
 # Seleção do tipo de conversão e upload do arquivo
-tipo = st.selectbox("Selecione o tipo de conversão que deseja:", ["JPEG","JPG" , "BMP","TXT", "DOCX", ])
+tipo = st.selectbox("Selecione o tipo de conversão que deseja:", ["JPEG","JPG" , "BMP","TXT", "DOCX","XLSX", "PPTX", "ODT"])
 arquivo = st.file_uploader(f"Escolha um arquivo {tipo} para converter em PDF", type=[tipo])
 
 
@@ -61,6 +62,7 @@ if arquivo is not None:
         file_name = os.path.basename(arquivo.name) # Pega o nome do arquivo enviado
         save_path = os.path.join(upload_diretory, file_name) # Cria o caminho completo para salvar o arquivo
         salvar_arquivo(arquivo, save_path)
+        converter_docx_para_pdf(file_name)
 
 
 

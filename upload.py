@@ -1,7 +1,5 @@
-import subprocess
+
 import os
-
-
 # Função para salvar o arquivo enviado na pasta 
 def salvar_arquivo(arquivo, save_path):
     with open(save_path, "wb") as f:
