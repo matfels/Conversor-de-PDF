@@ -30,7 +30,6 @@ def converter_docx_para_pdf(nome_arquivo):
     try:
 
         resultado = subprocess.run(comando, check=True, capture_output=True, text=True, timeout=30)
-        nome_base = os.path.splitext(nome_arquivo)[0]
         caminho_arquivo_pdf = os.path.join("PDF")
         print(f"Arquivo convertido salvo em: {caminho_arquivo_pdf}")
         return None

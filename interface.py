@@ -61,8 +61,16 @@ if arquivo is not None:
         
         file_name = os.path.basename(arquivo.name) # Pega o nome do arquivo enviado
         save_path = os.path.join(upload_diretory, file_name) # Cria o caminho completo para salvar o arquivo
+        nova_string = (file_name[:-4]+ "pdf")  
+        print(nova_string)
         salvar_arquivo(arquivo, save_path)
         converter_docx_para_pdf(file_name)
 
+        st.download_button(
+            label="Baixar PDF convertido",
+            data=open(f"PDF/{nova_string}", "rb").read(),
+            file_name=f"{nova_string}.pdf",
+            mime="application/pdf"
+        )
 
-
+    
