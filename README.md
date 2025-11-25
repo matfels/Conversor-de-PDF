@@ -54,5 +54,4 @@ O sistema suporta a conversão dos seguintes formatos para PDF:
 ### Teste do projeto
 
 Projeto para teste On-line:
-   ```bash
    https://conversor-de-pdf-gznaedwrwscwqsxl2flmse.streamlit.app/
