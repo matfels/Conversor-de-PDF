@@ -32,8 +32,27 @@ O sistema suporta a conversão dos seguintes formatos para PDF:
 2. **LibreOffice** instalado na máquina (necessário para conversão de DOCX).
    - O script busca automaticamente por `soffice` ou `libreoffice` no PATH do sistema.
 
-### Instalação
 
-1. Projeto para teste:
+### Instalação
+1. Clone este repositório:
+   ```bash
+   git clone [https://github.com/seu-usuario/conversor-pdf-seguro.git](https://github.com/seu-usuario/conversor-pdf-seguro.git)
+   cd conversor-pdf-seguro
+   
+2. Instale as dependências:
+```bash
+   pip install -r requirements.txt
+```
+
+3. Execute a aplicação:
+```bash
+   streamlit run app.py
+```
+4. Acesse no seu navegador (geralmente em http://localhost:8501).
+
+   
+### Teste do projeto
+
+Projeto para teste On-line:
    ```bash
    https://conversor-de-pdf-gznaedwrwscwqsxl2flmse.streamlit.app/
