@@ -86,7 +86,6 @@ A Solução: Desenvolvi esta aplicação em Python que realiza a conversão de a
     )
 with col2:
     st.title("Contato")
-    st.write("📫", "matheusferreirademelo@outlook.com.br")
     st.write("E-mail: matheusferreirademelo@outlook.com.br")
 
     st.write('Me encontre nas redes sociais: [LinkedIn](https://www.linkedin.com/in/matheusferreirademelo/) | [GitHub](https://github.com/matfels) | [Instagram]("https://www.instagram.com/matfels_/?__pwa=1#")'
