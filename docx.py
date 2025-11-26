@@ -1,9 +1,8 @@
 import os
 import subprocess
-import shutil
 
 def converter_docx_para_pdf(nome_arquivo):
-    caminho_soffice = shutil.which("soffice") or shutil.which("libreoffice")
+    caminho_soffice = r"C:\Program Files\LibreOffice\program\soffice.exe"
 
     pasta = "uploads"
     caminho_arquivo = os.path.join(pasta, nome_arquivo)
@@ -15,9 +14,7 @@ def converter_docx_para_pdf(nome_arquivo):
 
     # Passando os caminhos da pasta de entrada e saída
     arquivo_entrada = os.path.abspath(caminho_arquivo) # Define o caminho do arquivo de entrada
-    pasta_saida = "PDF" # Define a pasta de saída
-    if not os.path.exists(pasta_saida):
-        os.makedirs(pasta_saida)
+    pasta_saida = r"C:\Users\User\Desktop\CONVERSOR DE PDF\PDF" # Define a pasta de saída
     print("Convertendo arquivo DOCX para PDF...")
 
     # Comando para chamar o LibreOffice em modo headless

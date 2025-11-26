@@ -9,12 +9,13 @@ from docx import converter_docx_para_pdf
 st.set_page_config(
     page_title="Converter para PDF",
     page_icon="📄",
-    layout="wide"
+    layout="centered"
 )
 
 st.title("Conversor de PDF 📄") # Título do aplicativo
+st.header("-----------------------------------") # Cabeçalho
 st.write("Objetivo converter arquivo em PDF de forma segura.") # Texto simples
-st.write("---")
+
 
 # Seleção do tipo de conversão e upload do arquivo
 tipo = st.selectbox("Selecione o tipo de conversão que deseja:", ["JPEG","JPG" , "BMP","TXT", "DOCX","XLSX", "PPTX", "ODT"])
@@ -72,22 +73,4 @@ if arquivo is not None:
             mime="application/pdf"
         )
 
-st.write("---")
-st.write("===============================================")
-col1, col2 = st.columns([2, 1], gap="medium", border=True)
-with col1:
-    st.title("Cenário de Negócio")
-    st.write(
-        """
-O Cenário: Trabalhando na área de infraestrutura, identifiquei um risco recorrente de segurança: colaboradores utilizavam sites públicos e não homologados para converter arquivos internos em PDF. Isso expunha documentos com informações sensíveis a servidores de terceiros sem garantia de confidencialidade.
-
-A Solução: Desenvolvi esta aplicação em Python que realiza a conversão de arquivos (DOCX, Imagens e TXT) para PDF localmente ou em um ambiente controlado. O objetivo é oferecer a praticidade das ferramentas online, mas com a segurança de que os dados não serão armazenados ou processados por terceiros desconhecidos.
-        """
-    )
-with col2:
-    st.title("Contato")
-    st.write("📫", "matheusferreirademelo@outlook.com.br")
-    st.write("E-mail: matheusferreirademelo@outlook.com.br")
-
-    st.write('Me encontre nas redes sociais: [LinkedIn](https://www.linkedin.com/in/matheusferreirademelo/) | [GitHub](https://github.com/matfels) | [Instagram]("https://www.instagram.com/matfels_/?__pwa=1#")'
-    )
+    
